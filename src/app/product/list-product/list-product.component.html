@@ -1,0 +1,26 @@
+<div class="container" *ngIf="products$ | async">
+  <div class="row mt-5">
+        <div class="col-6">
+          <h4 class="d-flex justify-content-start align-content-center">
+            Create new Product &#8594;
+          </h4>
+        </div>
+        <div class="col-6 d-flex justify-content-end align-content-center">
+          <a
+            routerLink="/products/create"
+            class="btn btn-outline-secondary btn-lg w-50 me-0 fw-bold"
+          >
+            Create
+        </a>
+        </div>
+      </div>
+  <div class="row mt-5">
+    <div class="col col-sm-2 col-md-3 col-lg-4 m-1" *ngFor="let product of (products$ | async)?.products">
+      <app-product-display
+        [product]="product"
+        (onBackToList)="backToList()"
+        (onAddCart)="addToCart($event)"
+      />
+    </div>
+  </div>
+</div>

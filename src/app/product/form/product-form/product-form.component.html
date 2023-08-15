@@ -1,0 +1,101 @@
+<div class="row mt-5" *ngIf="users && productForm">
+  <div class="col col-sm-4 col-md-4 offset-4">
+    <div class="card">
+      <form [formGroup]="productForm" (ngSubmit)="onProductSubmit()">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Product Form</h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="name" class="form-label"> Name </label>
+            <input
+              id="name"
+              formControlName="name"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+              class="alert alert-danger mt-2"
+            >
+              <p *ngIf="name?.errors?.['required']">Name is required</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="company" class="form-label">Company</label>
+            <input
+              id="company"
+              formControlName="company"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="company?.invalid && (company?.dirty || company?.touched)"
+              class="alert alert-danger mt-2"
+            >
+              <p *ngIf="company?.errors?.['required']">Company is required</p>
+            </div>
+          </div>          
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              id="price"
+              formControlName="price"
+              type="number"
+              class="form-control"
+            />
+            <div
+              *ngIf="price?.invalid && (price?.dirty || price?.touched)"
+              class="alert alert-danger mt-2"
+            >
+              <p *ngIf="price?.errors?.['required']">Price is required</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="productImage" class="form-label">Product Image</label>
+            <input
+              id="productImage"
+              formControlName="productImage"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="userId" class="form-label">User</label>
+            <select id="userId" formControlName="userId" class="form-select">
+              <option>Please select user</option>
+              <option
+                *ngFor="let user of users"
+                [value]="user.id"
+                [id]="user.id"
+              >
+                {{ user.name }}
+              </option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              id="description"
+              type="text"
+              formControlName="description"
+              class="form-control"
+            ></textarea>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-outline-primary form-control fw-bold">
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary form-control fw-bold"
+            (click)="backToList()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

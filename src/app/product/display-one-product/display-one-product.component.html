@@ -1,0 +1,39 @@
+<div class="col col-sm-8 col-8 offset-2 mt-5" *ngIf="product">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Product Detail</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">Name : {{product.name}}</li>
+            <li class="list-group-item">Company : {{product.company}}</li>
+            <li class="list-group-item">Price : {{product.price}}</li>
+            <li class="list-group-item">Description : {{product.description}}</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button
+            (click)="backToList()"
+            class="btn-outline-secondary form-control text-center m-1"
+          >
+            Back
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger form-control"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <app-alert-modal
+        modalButtonClose="back"
+        modalMessage="Do you really want to delete this product?"
+        modalTitle="Product Delete Confirmation!"
+        modalButtonSave="Delete"
+        (onModalButtonHandler)="deleteProduct($event!)"
+      />
+    </div>
+

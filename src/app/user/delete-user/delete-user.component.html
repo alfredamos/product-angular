@@ -1,0 +1,7 @@
+  <app-display-one-user
+    *ngIf="user$"
+    [user]="(user$ | async)!"
+    (onBackToList)="backToList()"
+    (onDeleteHandler)="deleteUser($event)"
+  />
+

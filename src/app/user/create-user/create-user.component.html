@@ -1,0 +1,6 @@
+<app-signup-form
+[signupForm]="userForm"
+[formName]="'Create User'"
+(onBackToList)="backToList()"
+(onSignup)="userSubmit($event!)"
+/>

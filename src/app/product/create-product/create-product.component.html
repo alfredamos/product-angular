@@ -1,0 +1,8 @@
+<app-product-form
+*ngIf="users$"
+[users]="(users$ | async)!"
+[productForm]="productForm"
+formName="Product Create"
+(onBackToList)="backToList()"
+(onProduct)="productCreate($event!)"
+/>

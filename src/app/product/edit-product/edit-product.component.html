@@ -1,0 +1,7 @@
+<app-product-form
+[users]="(users$ | async)!"
+[productForm]="productForm"
+formName="Product Edit"
+(onBackToList)="backToList()"
+(onProduct)="editCreate($event!)"
+/>

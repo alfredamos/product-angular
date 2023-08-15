@@ -1,0 +1,6 @@
+<app-display-one-product
+*ngIf="product$"
+[product]="(product$ | async)!"
+(onBackToList)="backToList()"
+(onDeleteHandler)="deleteProduct($event!)"
+/>

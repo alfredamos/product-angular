@@ -1,0 +1,10 @@
+<div class="container" *ngIf="users$">
+      <div class="row">
+        <div class="col-sm-6 mt-5">
+          <app-users-table [users]="(users$ | async)?.users!"/>          
+        </div>
+        <div class="col-sm-6">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
