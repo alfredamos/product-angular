@@ -25,7 +25,7 @@
             <label for="email" class="form-label">Email</label>
             <input
               id="email"
-              formControlName="name"
+              formControlName="email"
               type="email"
               class="form-control"
             />
@@ -75,15 +75,16 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="mb-3">
+                  <div class="mb-3">
           <label for="gender" class="form-label">Gender</label>
           <select id="gender" formControlName="gender" class="form-select">
-            <option>Please select the gender</option>
+            <option></option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
           </select>
         </div>
+        </div>
+
         <div class="card-footer">
           <button type="submit" class="btn btn-outline-primary form-control fw-bold">
             Submit

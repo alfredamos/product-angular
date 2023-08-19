@@ -13,6 +13,7 @@
             </div>
             <div class="card-footer bg-white p-4">
               <button
+              type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 class="btn btn-outline-secondary btn-lg form-control fw-bold p-2"
@@ -20,6 +21,7 @@
                 Logout
               </button>
               <button
+              type="button"
                 (click)="backToLastPage()"
                 class="btn btn-outline-primary btn-lg form-control fw-bold p-2"
               >
@@ -30,7 +32,7 @@
         </div>
       </div>
       <app-alert-modal
-        modalButtonClose="Back"        
+        modalButtonClose="Back"
         modalButtonSave="Logout"
         modalMessage="Do you really want to Logout?"
         modalTitle="Logout Confirmation!"

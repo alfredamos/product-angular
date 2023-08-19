@@ -1,0 +1,66 @@
+<div class="row mt-5">
+  <div class="col col-sm-8 col-md-8 offset-2">
+    <div class="card">
+      <form [formGroup]="featureProductForm" (ngSubmit)="productSubmit()">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Product Form</h4>
+        </div>
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="name" class="form-label"> Name </label>
+            <input
+              id="name"
+              formControlName="name"
+              type="text"
+              class="form-control"
+              [attr.disabled]="true"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="company" class="form-label">Company</label>
+            <input
+              id="company"
+              formControlName="company"
+              type="text"
+              class="form-control"
+              [attr.disabled]="true"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              id="price"
+              formControlName="price"
+              type="number"
+              class="form-control"
+              [attr.disabled]="true"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="featured" class="form-label">Feature</label>
+            <select id="featured" formControlName="featured" class="form-select">
+              <option>Feature</option>
+              <option [value]="false">False</option>
+              <option [value]="true">True</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button
+            type="submit"
+            class="btn btn-outline-primary form-control fw-bold"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary form-control fw-bold"
+            (click)="backToList()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

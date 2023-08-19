@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { ProductApiResults } from 'src/models/products/product-api-response.models';
 import { ProductDto } from 'src/models/products/product.model';
+import { FeatureProductComponent } from '../admin/feature-product/feature-product.component';
+import FeatureProductDto from 'src/models/products/feature-product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -43,6 +45,10 @@ export class ProductService {
 
   getProductById(id: string) {
     return this.http.get<ProductApiResults>(`${this.url}/${id}`);
+  }
+
+  updateFeature(featureProductDto: FeatureProductDto){
+    return this.http.patch<ProductApiResults>(`${this.url}/feature`, featureProductDto)
   }
 
   updateProducts$(value: ProductDto[]) {

@@ -7,6 +7,7 @@ import { ChangePasswordDto } from 'src/models/auth/change-password.model';
 import { EditProfileDto } from 'src/models/auth/edit-profile.model';
 import { SignupDto } from '../../models/auth/signup.model';
 import { UserDetail } from 'src/models/auth/user-detail.model';
+import { MakeAdminUserDto } from 'src/models/auth/make-admin-user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -55,6 +56,13 @@ export class AuthService {
 
   signup(signup: SignupDto): Observable<AuthApiResponse> {
     return this.http.post<AuthApiResponse>(`${this.url}/signup`, signup);
+  }
+
+  updateUserRole(changeUserRoleDto: MakeAdminUserDto){
+    return this.http.patch<AuthApiResponse>(
+      `${this.url}/change-role`,
+      changeUserRoleDto
+    );
   }
 
   updateAuthUser$(value: AuthApiResponse) {

@@ -1,0 +1,11 @@
+<div class="container" *ngIf="products$">
+      <div class="row">
+        <div class="col-sm-6 mt-5">
+          <app-products-table [products]="(products$ | async)?.products!"/>          
+        </div>
+        <div class="col-sm-6">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+

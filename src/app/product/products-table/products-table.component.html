@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header bg-primary text-white p-3">
-    <h4 class="text-center">User List</h4>
+    <h4 class="text-center">Product List</h4>
   </div>
   <div class="card-body">
     <table class="table table-responsive table-striped table-bordered">
@@ -11,32 +11,32 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.name }}</td>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
           <td>
             <a
-              routerLink="/users/detail/{{ user.id }}"
+              routerLink="/list-product/detail/{{ product.id }}"
               class="btn btn-outline-primary m-1 btn-sm fw-bold"
             >
               View
             </a>
             <a
-              routerLink="/users/delete/{{ user.id }}"
+              routerLink="/list-product/delete/{{ product.id }}"
               class="btn btn-outline-danger m-1 btn-sm fw-bold"
             >
               Delete
             </a>
             <a
-              routerLink="/users/edit/{{ user.id }}"
+              routerLink="/list-product/edit/{{ product.id }}"
               class="btn btn-outline-secondary m-1 btn-sm fw-bold"
             >
               Edit
             </a>
             <a
-              routerLink="/users/make-admin/{{ user.id }}"
+              routerLink="/list-product/feature/{{ product.id }}"
               class="btn btn-outline-dark m-1 btn-sm fw-bold"
             >
-              Role
+              Feature
             </a>
           </td>
         </tr>
@@ -45,10 +45,10 @@
   </div>
   <div class="card-footer d-flex flex-column align-items-center justify-content-center p-3">
     <a
-      routerLink="/users/create"
+      routerLink="/list-product/create"
       class="btn btn-outline-secondary btn-lg form-control fw-bold"
     >
-      Create User
+      Create Product
     </a>
     <a
       routerLink="/admin-panel"
@@ -58,3 +58,4 @@
     </a>
   </div>
 </div>
+

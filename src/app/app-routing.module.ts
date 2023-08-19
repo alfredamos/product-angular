@@ -20,29 +20,78 @@ import { CreateProductComponent } from './product/create-product/create-product.
 import { DeleteProductComponent } from './product/delete-product/delete-product.component';
 import { DetailProductComponent } from './product/detail-product/detail-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { SomethingWrongComponent } from './auth/something-wrong/something-wrong.component';
+import { FeatureProductComponent } from './admin/feature-product/feature-product.component';
+import { MakeAdminUserComponent } from './admin/make-admin-user/make-admin-user.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 
 const routes: Routes = [
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'edit-profile', component: EditProfileComponent },
-  {path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'logout', component: LogoutComponent},
-  {path: 'must-login', component: MustLoginComponent},
-  {path: 'not-allowed', component: NotAllowedComponent},
+  { path: 'logout', component: LogoutComponent },
+  { path: 'must-login', component: MustLoginComponent },
+  { path: 'not-allowed', component: NotAllowedComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'something-wrong', component: SomethingWrongComponent },
+  {
+    path: 'admin-panel',
+    
+    component: AdminPanelComponent,
+    canActivate: [adminGuard]
+  },
+  {
+    path: 'products',
+    component: ListProductComponent,
+    canActivate: [protectedGuard]
+  },
+  { path: 'products/detail/:id', component: DetailProductComponent },  
 
-  { path: 'products', component: ListProductComponent, canActivate: [protectedGuard] },
-  {path: "products/create", component: CreateProductComponent},
-  {path: "products/delete/:id", component: DeleteProductComponent},
-  {path: "products/detail/:id", component: DetailProductComponent},
-  {path: "products/edit/:id", component: EditProductComponent},
-
-  { path: 'users', component: ListUserComponent, canActivate: [adminGuard], children: [
-      {path: 'create', component: CreateUserComponent},
-      {path: 'delete/:id', component: DeleteUserComponent},
-      {path: 'detail/:id', component: DetailUserComponent},
-      {path: 'edit/:id', component: EditUserComponent},
-  ] }
+  {
+    path: 'users',
+    component: ListUserComponent,
+    canActivate: [adminGuard],
+    children: [
+      { path: 'create', component: CreateUserComponent },
+      {
+        path: 'make-admin/:id',
+        component: MakeAdminUserComponent,
+      },
+      { path: 'delete/:id', component: DeleteUserComponent },
+      { path: 'detail/:id', component: DetailUserComponent },
+      { path: 'edit/:id', component: EditUserComponent },
+    ],
+  },
+  {
+    path: 'list-product',
+    component: ProductListComponent,
+    canActivate: [adminGuard],
+    children: [
+      {
+        path: 'create',
+        component: CreateProductComponent,
+      },
+      {
+        path: 'delete/:id',
+        component: DeleteProductComponent,
+      },
+      {
+        path: 'detail/:id',
+        component: ProductDetailComponent,
+      },
+      {
+        path: 'edit/:id',
+        component: EditProductComponent,
+      },
+      {
+        path: 'feature/:id',
+        component: FeatureProductComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({

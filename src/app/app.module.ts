@@ -9,12 +9,14 @@ import { SharedModule } from './shared/shared.module';
 import { AuthInterceptor } from './auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserModule } from './user/user.module';
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AdminModule,
     AuthModule,
     ProductModule,
     UserModule,

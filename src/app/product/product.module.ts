@@ -8,6 +8,9 @@ import { ProductFormComponent } from './form/product-form/product-form.component
 import { SharedModule } from '../shared/shared.module';
 import { ProductDisplayComponent } from './product-display/product-display.component';
 import { DisplayOneProductComponent } from './display-one-product/display-one-product.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductsTableComponent } from './products-table/products-table.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { DisplayOneProductComponent } from './display-one-product/display-one-pr
     DeleteProductComponent,
     ProductFormComponent,
     ProductDisplayComponent,
-    DisplayOneProductComponent
+    DisplayOneProductComponent,
+    ProductDetailComponent,
+    ProductListComponent,
+    ProductsTableComponent
   ],
   imports: [
     SharedModule

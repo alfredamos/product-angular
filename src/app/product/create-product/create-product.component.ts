@@ -34,11 +34,11 @@ export class CreateProductComponent {
   }
 
   productCreate(value: ProductDto){
-    this.productService.createProduct(value).subscribe(() => this.router.navigate(["/products"]))
+    this.productService.createProduct(value).subscribe(() => this.router.navigate(["/list-product"]))
   }
 
   backToList(){
-    this.router.navigate(["/products"]);
+    this.router.navigate(["/list-product"]);
   }
 
 }

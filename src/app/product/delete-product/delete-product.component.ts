@@ -34,11 +34,11 @@ export class DeleteProductComponent {
         .deleteProduct(this.id)
         .subscribe(() => this.router.navigate(['/products']));
     } else {
-      this.router.navigate(['/products']);
+      this.router.navigate(['/list-product']);
     }
   }
 
   backToList() {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/list-product']);
   }
 }

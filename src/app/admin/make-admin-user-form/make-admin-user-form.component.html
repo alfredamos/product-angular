@@ -1,0 +1,83 @@
+<div class="row mt-5">
+    <div class="col col-sm-8 col-md-8 offset-2">
+      <div class="card">
+        <form [formGroup]="makeAdminUserForm" (ngSubmit)="makeUserAdmin()">
+          <div class="card-header bg-primary text-white">
+            <h4 class="text-center">User Role Update Form</h4>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="name" class="form-label"> Name </label>
+              <input
+                id="name"
+                formControlName="name"    
+                type="text"
+                class="form-control"
+                [attr.disabled]="true"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                formControlName="email"
+                type="email"
+                class="form-control"
+                [attr.disabled]="true"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input
+                id="phone"
+                formControlName="phone"
+                type="tel"
+                [attr.disabled]="true"
+                class="form-control"
+              />
+            </div>            
+            <div class="mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select
+                id="gender"
+                formControlName="gender"
+                class="form-select"
+                [attr.disabled]="true"
+              >
+                <option>User Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="userType" class="form-label">User Role</label>
+              <select
+                id="userType"
+                formControlName="userType"
+                class="form-select"
+              >
+                <option>User Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Customer">Customer</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button
+              type="submit"
+              class="btn btn-outline-primary form-control fw-bold"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary form-control fw-bold"
+              (click)="backToList()"
+            >
+              Back
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

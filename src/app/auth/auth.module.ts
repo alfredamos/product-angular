@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 import { MustLoginComponent } from './must-login/must-login.component';
+import { SomethingWrongComponent } from './something-wrong/something-wrong.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MustLoginComponent } from './must-login/must-login.component';
     HomeComponent,
     LogoutComponent,
     NotAllowedComponent,
-    MustLoginComponent
+    MustLoginComponent,
+    SomethingWrongComponent
   ],
   imports: [
     SharedModule
